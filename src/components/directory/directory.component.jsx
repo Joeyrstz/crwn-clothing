@@ -2,11 +2,14 @@
  * Copyright (c) 2021.
  * Joey Stoetzel, github.com/Joeyrstz
  * This project is part of my portfolio and was developed for educational and presentation purposes.
- * The use of the project for internal, external or profit-oriented purposes is prohibited without my permission.
+ * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
  */
 import React from "react";
 import './directory.styles.scss';
 import MenuItem from "../menu-item/menu-item.component";
+const imagesPath = process.env.PUBLIC_URL + '/assets/images/';
+
+
 
 class Directory extends React.Component {
     constructor() {
@@ -14,35 +17,35 @@ class Directory extends React.Component {
         this.state = {
             sections: [{
                 title: 'hats',
-                imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                imageUrl: `${imagesPath}hats.png`,
                 id: 1,
                 linkUrl: 'shop/hats'
             },
                 {
                     title: 'jackets',
-                    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                    imageUrl: `${imagesPath}jackets.png`,
                     id: 2,
                     linkUrl: 'shop/jackets'
                 },
                 {
                     title: 'sneakers',
-                    imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                    imageUrl: `${imagesPath}sneakers.png`,
                     id: 3,
                     linkUrl: 'shop/sneakers'
                 },
                 {
-                    title: 'womens',
-                    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                    title: 'women',
+                    imageUrl: `${imagesPath}women.png`,
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens'
+                    linkUrl: 'shop/women'
                 },
                 {
-                    title: 'mens',
-                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                    title: 'men',
+                    imageUrl: `${imagesPath}men.png`,
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens'
+                    linkUrl: 'shop/men'
                 }]
         }
     }
