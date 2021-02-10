@@ -1,0 +1,29 @@
+/*!
+ * Copyright (c) 2021.
+ * Joey Stoetzel, github.com/Joeyrstz
+ * This project is part of my portfolio and was developed for educational and presentation purposes.
+ * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
+ */
+.custom-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
