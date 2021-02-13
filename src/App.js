@@ -15,7 +15,7 @@ import ShopPage from "./pages/shop/shop.component";
 import SignPage from "./pages/sign-page/sign-page.component";
 //Components
 import NavHeader from "./components/navheader/navheader.component";
-import { auth} from "./firebase/firebase.utils";
+import {auth, createUserDocument} from "./firebase/firebase.utils";
 
 const HatsPage = () => (
     <div>
@@ -34,26 +34,40 @@ class App extends React.Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
-        this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-            this.setState({currentUser: user});
-        });
+        this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => this.handleAuthChange(userAuth));
     }
     componentWillUnmount() {
         this.unsubscribeFromAuth();
     }
-
     render() {
         return (
             <div>
                 <NavHeader currentUser={this.state.currentUser}/>
                 <Switch>
-                    <Route exact="true" path="/" component={HomePage}/>
-                    <Route exact="true" path="/shop" component={ShopPage}/>
-                    <Route exact="true" path="/hats" component={HatsPage}/>
-                    <Route exact="true" path="/signIn" component={SignPage}/>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route exact path="/shop" component={ShopPage}/>
+                    <Route exact path="/hats" component={HatsPage}/>
+                    <Route exact path="/signIn" component={SignPage}/>
                 </Switch>
             </div>
         );
+    }
+
+    async handleAuthChange(userAuth) {
+        if (userAuth) {
+            const userRef = await createUserDocument(userAuth);
+            userRef.onSnapshot(snapShot => {
+                this.setState({
+                    currentUser: {
+                        id: snapShot.id,
+                        ...snapShot.data()
+                    }
+                }, () => {console.log(this.state)})
+            })
+        }
+        else {
+            this.setState({currentUser: userAuth});
+        }
     }
 }
 
