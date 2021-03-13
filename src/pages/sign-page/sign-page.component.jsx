@@ -7,11 +7,12 @@
 import React from "react";
 import SignIn from "../../components/sign-in/sign-in.component";
 import "./sign-page.styles.scss";
+import SignUp from "../../components/sign-up/sign-up.component";
 
 const SignPage = () => (
     <div className="sign-page">
-        <h1>SignIn</h1>
         <SignIn/>
+        <SignUp/>
     </div>
 )
 export default SignPage;

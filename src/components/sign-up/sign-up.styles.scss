@@ -4,9 +4,11 @@
  * This project is part of my portfolio and was developed for educational and presentation purposes.
  * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
  */
-.sign-page {
-  width: 80vw;
+.sign-up {
   display: flex;
-  justify-content: space-between;
-  margin: 30px auto;
+  flex-direction: column;
+  width: 30vw;
+  .title {
+    margin: 10px 0;
+  }
 }
