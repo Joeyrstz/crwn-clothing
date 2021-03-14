@@ -6,6 +6,7 @@
  */
 import React from "react";
 import { Link } from "react-router-dom";
+import {connect} from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
 import {ReactComponent as Logo } from "../../internal-assets/crown.svg";
 import "./navheader.styles.scss";
@@ -27,5 +28,9 @@ const NavHeader = ({currentUser}) => (
         </div>
     </div>
 )
+const mapStateToProps = (state) => ({
+    currentUser: state.user.currentUser
+})
 
-export default NavHeader;
+
+export default connect(mapStateToProps)(NavHeader);
