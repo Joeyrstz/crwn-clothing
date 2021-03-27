@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2021.
+ * Joey Stoetzel, github.com/Joeyrstz
+ * This project is part of my portfolio and was developed for educational and presentation purposes.
+ * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
+ */
+
+.cart-icon {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .icon-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .item-count {
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    bottom: 10px;
+  }
+}

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import {connect} from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
 import {ReactComponent as Logo } from "../../internal-assets/crown.svg";
+import CartIcon from "../cart-icon/cart-icon.component";
 import "./navheader.styles.scss";
 
 const NavHeader = ({currentUser}) => (
@@ -25,6 +26,7 @@ const NavHeader = ({currentUser}) => (
                     :
                     <Link className="option" to="/signin">SIGN IN</Link>
             }
+            <CartIcon/>
         </div>
     </div>
 )

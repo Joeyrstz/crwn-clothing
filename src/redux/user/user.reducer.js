@@ -4,6 +4,7 @@
  * This project is part of my portfolio and was developed for educational and presentation purposes.
  * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
  */
+import { UserActionTypes } from "./user.types";
 
 const INITIAL_STATE = {
     currentUser: null
@@ -11,7 +12,7 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case "SET_CURRENT_USER":
+        case UserActionTypes.SET_CURRENT_USER:
             return {
                 ...state,
                 currentUser: action.payload
