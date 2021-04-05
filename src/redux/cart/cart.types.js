@@ -5,11 +5,6 @@
  * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
  */
 
-import { combineReducers } from "redux";
-import userReducer from "./user/user.reducer";
-import cartReducer from "./cart/cart.reducer";
-
-export default combineReducers({
-    user: userReducer,
-    cart: cartReducer
-});
+export const CartActionTypes = {
+    TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN'
+}

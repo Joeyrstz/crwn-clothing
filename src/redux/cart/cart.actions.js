@@ -4,12 +4,9 @@
  * This project is part of my portfolio and was developed for educational and presentation purposes.
  * The use of the project for internal, external or profit-oriented purposes is prohibited without my consent.
  */
-
-import { combineReducers } from "redux";
-import userReducer from "./user/user.reducer";
-import cartReducer from "./cart/cart.reducer";
-
-export default combineReducers({
-    user: userReducer,
-    cart: cartReducer
-});
+import { CartActionTypes } from "./cart.types";
+export const toggleCartHidden = () => (
+    {
+        type: CartActionTypes.TOGGLE_CART_HIDDEN
+    }
+)
