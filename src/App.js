@@ -18,6 +18,8 @@ import SignPage from "./pages/sign-page/sign-page.component";
 import NavHeader from "./components/navheader/navheader.component";
 import {auth, createUserDocument} from "./firebase/firebase.utils";
 import {setCurrentUser} from "./redux/user/user.actions";
+import {selectCurrentUser} from "./redux/user/user.selectors";
+import {createStructuredSelector} from "reselect";
 
 const HatsPage = () => (
     <div>
@@ -66,8 +68,8 @@ class App extends React.Component {
         //ToDo Redirect to Home or Shop
     }
 }
-const mapStateToProps = ({user}) => ({
-    currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
 });
 
 
