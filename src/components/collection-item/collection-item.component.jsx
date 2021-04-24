@@ -10,7 +10,7 @@ import {addItem, removeItem} from "../../redux/cart/cart.actions";
 import "./collection-item.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
 
-const CollectionItem = ({item, addItem, removeItem}) => (
+const CollectionItem = ({item, addItem}) => (
     <div className="collection-item">
         <div className="image" style={{backgroundImage: `url(${item.imageUrl})`}}/>
         <div className="collection-footer">

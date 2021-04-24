@@ -14,6 +14,7 @@ import './App.css';
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import SignPage from "./pages/sign-page/sign-page.component";
+import CheckoutPage from "./pages/checkout/checkout.component";
 //Components
 import NavHeader from "./components/navheader/navheader.component";
 import {auth, createUserDocument} from "./firebase/firebase.utils";
@@ -43,7 +44,8 @@ class App extends React.Component {
                 <NavHeader/>
                 <Switch>
                     <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/shop" component={ShopPage}/>
+                    <Route path="/shop" component={ShopPage}/>
+                    <Route exact path ="/checkout" component={CheckoutPage}/>
                     <Route exact path="/hats" component={HatsPage}/>
                     <Route exact path="/signIn" render={() => this.props.currentUser ? (<Redirect to="/"/>) : (<SignPage/>)}/>
                 </Switch>

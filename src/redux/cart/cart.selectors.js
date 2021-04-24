@@ -17,6 +17,10 @@ export const selectItemCount = createSelector(
     [selectCartItems],
     items => items.reduce((accumulator, value) => accumulator + value.quantity, 0)
 );
+export const selectCartTotal = createSelector(
+    [selectCartItems],
+    items => items.reduce((acc, value) => acc + value.quantity * value.price, 0)
+);
 export const selectHidden = createSelector(
     [selectCart],
     cart => cart.hidden
